@@ -11,7 +11,7 @@ print("\nDatetie object is: ",date_object)
 
 #Subtracting a week from given date
 given_date=datetime(2024,12,27)
-new_date=given_date-timedelta(days=1)
+new_date=given_date-timedelta(days=7)
 print("\nNew date is: ",new_date)
 
 #Finding the day of the week of the given date
