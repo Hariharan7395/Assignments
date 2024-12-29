@@ -18,7 +18,7 @@
 void display_menu();
 
 int main(){
-        initialise_trains(); // Initialize train data
+        initialise_trains(); //Initialize train data
         while(1){
                 int option_selected;
                 display_menu();
@@ -29,11 +29,11 @@ int main(){
                                 search_train(); //Search and book a train
                                 break;
                         case Cancellation_option:
-                                cancel_ticket();// Cancel a ticket
+                                cancel_ticket();//Cancel a ticket
                                 break;
                         case Exit_option:
                                 printf("Thank you for using the Booking System.\n");
-                                exit(0);// Exit the program
+                                exit(0);//Exit the program
                         default:
                                 printf("Error: Invalid option.\n");
                 }
