@@ -16,60 +16,50 @@ Booking bookings[100];         // Array to store booking details
  *Function to Books a ticket for a train and assigns the chosen coach.
  *train: Pointer to the train structure containing train details.
  */
-void book_ticket(Train *train) {
+void book_ticket(Train *train){
         char name[50];
         int age;
         int coach_prefered;
         float ticket_price;
-
         printf("\nSELECT THE Preferred Coach\nOPTIONS:\n1. General Coach\n2. Sleeper Coach\n");
         scanf("%d", &coach_prefered);
-
-        switch (coach_prefered) {
+        switch (coach_prefered){
                 case general_option:
-                        if (train->general_seat <= 0) {
+                        if(train->general_seat<=0){
                                 printf("No seats available in General Coach.\n");
                                 return;
                         }
-                        ticket_price = train->general_price;
+                        ticket_price=train->general_price;
                         train->general_seat--;
                         break;
-
                 case sleeper_option:
-                        if (train->sleeper_seat <= 0) {
+                        if(train->sleeper_seat <= 0){
                                 printf("No seats available in Sleeper Coach.\n");
                                 return;
                         }
                         ticket_price = train->sleeper_price;
                         train->sleeper_seat--;
                         break;
-
                 default:
                         printf("Invalid Choice! Please try again.\n");
                         return;
         }
-
         printf("Enter Passenger Name: ");
         scanf("%s", name);
         printf("Enter Passenger Age: ");
         scanf("%d", &age);
-
-        Booking new_booking = {
-                .booking_id = ++booking_count,
-                .train_id = train->train_id,
-                .age = age,
-                .coach_alloted = coach_prefered,
-                .ticket_price = ticket_price
+        Booking new_booking={
+                .booking_id =++booking_count,
+                .train_id=train->train_id,
+                .age=age,
+                .coach_alloted=coach_prefered,
+                .ticket_price=ticket_price
         };
-
         strcpy(new_booking.passenger_name, name);
-
         bookings[booking_count - 1] = new_booking;
-
         save_booking_to_file(&new_booking);
         view_receipt(&new_booking);
 }
-
 
 // Function Displays a receipt for the given booking.
 void view_receipt(Booking *new_booking) {
