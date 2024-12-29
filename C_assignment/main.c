@@ -19,15 +19,12 @@ void display_menu();
 
 int main() {
         initialise_trains(); // Initialize train data
-
-        while (1) {
+        while (1){
                 int option_selected;
-
                 display_menu();
                 printf("Enter your choice: ");
-                scanf("%d", &option_selected);
-
-                switch (option_selected) {
+                scanf("%d",&option_selected);
+                switch (option_selected){
                         case Booking_option:
                                 search_train(); // Search and book a train
                                 break;
@@ -41,12 +38,11 @@ int main() {
                                 printf("Error: Invalid option.\n");
                 }
         }
-
         return 0; // Program should never reach this point
 }
 
 //Function to display menu
-void display_menu() {
+void display_menu(){
         printf("\nWelcome to Train Ticket Booking System \n");
         printf("1.Search and Book a Train\n");
         printf("2.Cancel a Ticket\n");
