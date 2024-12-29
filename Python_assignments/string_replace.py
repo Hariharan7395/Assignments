@@ -1,0 +1,5 @@
+input_string=input("Enter the string: ")
+substring1=input("Enter the substring which you want to change: ")
+substring2=input("Enter the substring you want to replace with: ")
+output_string=input_string.replace(substring1,substring2)
+print(f"The replaced string is: {output_string}")
