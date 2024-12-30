@@ -19,11 +19,11 @@ Node* insert(Node* root,int data){
         if(!root){
                 return new Node(data);
         }
-        if(data<root->data){
-                root->left=insert(root->left,data);
+        if(data < root->data){
+                root->left = insert(root->left,data);
         }
         else{
-                root->right=insert(root->right, data);
+                root->right = insert(root->right, data);
         }
         return root;
 }
@@ -31,7 +31,7 @@ Node* insert(Node* root,int data){
 //Pre-order traversal (Root, Left, Right)
 void preOrder(Node* root){
         if(root){
-                cout<<root->data<<" ";
+                cout<< root->data <<" ";
                 preOrder(root->left);
                 preOrder(root->right);
         }
