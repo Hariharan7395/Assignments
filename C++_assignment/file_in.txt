@@ -1,5 +1,0 @@
-hello world
-this is a test file
-c++ is fun 
-this is the input file
-
