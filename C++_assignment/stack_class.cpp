@@ -50,7 +50,7 @@ public:
     }
 
     // Function to get the top element of the stack
-    int peek() {
+    int top() {
         if (isEmpty()) {
             cout << "Stack is empty." << endl;
             return -1;  
@@ -99,7 +99,7 @@ int main() {
                 cout << stack.pop() << " popped from stack" << endl;
                 break;
             case 3:
-                cout << "Top element is " << stack.peek() << endl;
+                cout << "Top element is " << stack.top() << endl;
                 break;
             case 4:
                 stack.display();
